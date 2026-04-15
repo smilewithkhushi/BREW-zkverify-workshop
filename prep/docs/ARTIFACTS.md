@@ -1,4 +1,4 @@
-# Magic Square ZK Circuit — What's Going On Here?
+# Magic Square ZK Circuit 
 
 ## What is a Magic Square?
 

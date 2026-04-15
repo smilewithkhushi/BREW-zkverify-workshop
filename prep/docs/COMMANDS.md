@@ -17,13 +17,20 @@ Runs the circuit with the inputs from `Prover.toml` and generates the witness.
 ```
 nargo execute
 ```
+
 ---
 
 ## 3. Generate the verification key
-Creates a verification key from the compiled circuit — needed to verify proofs.
+Creates a verification key from the compiled circuit which is needed to verify proofs.
 ```
 bb write_vk -b ./target/magic_square.json -o ./target
 ```
+
+**(ZKVerify)** Use this instead to add Keccak256 hash required by ZKVerify:
+```
+bb write_vk -b ./target/magic_square.json -o ./target --oracle_hash keccak
+```
+
 ---
 
 ## 4. Generate a proof
@@ -31,16 +38,20 @@ Takes the compiled circuit + witness and produces a ZK proof.
 ```
 bb prove -b ./target/magic_square.json -w ./target/magic_square.gz -o ./target
 ```
-
-
+**(ZKVerify)** Use this to add Keccak256 hash required by ZKVerify:
+```
+bb prove -b ./target/magic_square.json -w ./target/magic_square.gz -o ./target --oracle_hash keccak
+```
 
 ---
 
-## 5. Verify the proof
+## 5. Verify the proof locally
 Checks that the proof is valid against the verification key.
 ```
 bb verify -k ./target/vk -p ./target/proof
 ```
+
+**To send proofs to zkVerify Network for verification, run the script in the /scripts**
 
 ---
 

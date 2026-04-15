@@ -1,0 +1,6 @@
+[package]
+name = "magic_square"
+type = "bin"
+authors = ["zkverify"]
+
+[dependencies]
