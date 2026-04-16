@@ -20,12 +20,44 @@ Reference: `prep/docs/1.ARTIFACTS.md`
 
 ### Step 1: Wallet Setup (SubWallet)
 
-1. Install the **SubWallet** browser extension
-2. Create a new wallet and **save your seed phrase securely** — you will need it later
-3. Switch to **Volta Testnet** (ZKVerify's testnet) in SubWallet
-4. Also add **Sepolia** network (Ethereum testnet, Chain ID: `11155111`)
+**Install SubWallet:**
+1. Go to [subwallet.app](https://subwallet.app) and install the browser extension
+2. Create a new wallet
+3. **Write down your seed phrase and store it safely** — you will need it later to submit proofs
 
-> SubWallet supports both Substrate (ZKVerify/Volta) and EVM (Sepolia) networks in one wallet.
+---
+
+**Enable ZKVerify Volta Testnet (for proof submission):**
+1. Open SubWallet → go to **Manage Networks**
+2. Search for **"Volta"** or **"ZKVerify"**
+3. Enable it — this is the network where you submit ZK proofs
+
+---
+
+**Enable Ethereum Sepolia OR Horizen Testnet (for contract deployment):**
+
+You need one of these for deploying the verifier contract. Pick the one you prefer:
+
+| Option | Network Name | Chain ID | Purpose |
+|--------|-------------|----------|---------|
+| Ethereum Sepolia | Sepolia | `11155111` | Deploy + call `checkHash` |
+| Horizen Testnet | Horizen EON Testnet | `1663` | Alternative EVM testnet |
+
+In SubWallet → **Manage Networks** → search and enable your chosen network.
+
+---
+
+**Fund your wallet:**
+
+| Token | Network | Used For | Faucet |
+|-------|---------|---------|--------|
+| `$tVFY` | Volta (ZKVerify) | Paying for proof submission transactions | ZKVerify Discord → `#faucet` channel |
+| Sepolia ETH | Ethereum Sepolia | Deploying + calling the smart contract | [sepoliafaucet.com](https://sepoliafaucet.com) or [faucet.quicknode.com](https://faucet.quicknode.com/ethereum/sepolia) |
+| Horizen Test ZEN | Horizen EON Testnet | Deploying + calling the smart contract (if using Horizen) | Horizen Discord faucet |
+
+> You need **both** — `$tVFY` for ZKVerify AND ETH/ZEN for the EVM contract. Get both before starting.
+
+> SubWallet supports both Substrate (ZKVerify/Volta) and EVM (Sepolia/Horizen) networks in one wallet.
 
 ---
 

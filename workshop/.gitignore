@@ -19,9 +19,5 @@ proof-submission/.env.*
 proof-submission/node_modules/
 proof-submission/package-lock.json
 
-# Internal docs
-docs/SUMMARY.md
-
 # macOS
 .DS_Store
-
