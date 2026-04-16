@@ -85,9 +85,9 @@ export default async function handler(
   const leaf = agg.leaf as string | undefined
   const aggregationId = agg.aggregationId as string | number | undefined
   const domainId = agg.domainId as string | number | undefined
-  const merklePath = (agg.merklePath as string[] | undefined) ?? []
-  const leafCount = (agg.leafCount as string | number | undefined) ?? merklePath.length + 1
-  const index = (agg.index as string | number | undefined) ?? 0
+  const merklePath = (agg.proof as string[] | undefined) ?? (agg.merklePath as string[] | undefined) ?? []
+  const leafCount = (agg.numberOfLeaves as string | number | undefined) ?? (agg.leafCount as string | number | undefined) ?? merklePath.length + 1
+  const index = (agg.leafIndex as string | number | undefined) ?? (agg.index as string | number | undefined) ?? 0
 
   if (!leaf || aggregationId === undefined || domainId === undefined) {
     res.status(400).json({
